@@ -1,0 +1,9 @@
+Proceso Punto4
+	definir NombreCiudad Como Caracter;
+	definir NombrePais Como Caracter;
+	
+	escribir "Hola, por favor escriba la ciudad capital presiona enter y escriba el pais:";
+	leer NombreCiudad;
+	leer NombrePais;
+	escribir "La ciudad ",NombreCiudad," es la capital del país ",NombrePais;
+FinProceso

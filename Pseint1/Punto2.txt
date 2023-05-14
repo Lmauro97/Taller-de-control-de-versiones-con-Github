@@ -1,0 +1,15 @@
+Proceso Punto2
+	definir Nombre Como Caracter;
+	definir Apellido Como Caracter;
+	Definir Edad Como Entero;
+	Definir Estatura Como Real;
+	
+	escribir "Hola, por favor escriba su nombre:";
+	leer Nombre;
+	escribir "por favor escriba su apellido:";
+	leer Apellido;
+	escribir "por favor escriba su edad:";
+	leer Edad;
+	escribir "por favor escriba su estatura en metros:";
+	leer Estatura;
+FinProceso

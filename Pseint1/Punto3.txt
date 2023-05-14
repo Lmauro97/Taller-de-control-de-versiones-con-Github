@@ -1,0 +1,14 @@
+Proceso Punto3
+	definir NombreCompleto Como Caracter;
+	definir NombreCompletoMama Como Caracter;
+	definir NombreCompletoPapa Como Caracter;
+	
+	escribir "Hola, por favor escriba su nombre completo:";
+	leer NombreCompleto;
+	escribir "por favor escriba el nombre completo de su mamá:";
+	leer NombreCompletoMama;
+	escribir "por favor escriba el nombre completo de su papá:";
+	leer NombreCompletoPapa;
+	Escribir "Yo ",NombreCompleto," soy hijo de ",NombreCompletoMama," y ",NombreCompletoPapa;
+	
+FinProceso

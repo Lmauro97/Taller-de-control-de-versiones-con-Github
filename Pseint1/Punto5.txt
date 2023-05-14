@@ -1,0 +1,16 @@
+Proceso Punto5
+	definir NombreMascota Como Caracter;
+	definir EdadMascota Como Entero;
+	Definir TipoMascota Como Caracter;
+	Definir NombreCompleto Como Caracter;
+	
+	escribir "Hola, por favor escriba el nombre de la mascota:";
+	leer NombreMascota;
+	Escribir "por favor escriba la edad(en años) de la mascota:";
+	leer EdadMascota;
+	escribir "por favor escriba el tipo de mascota:";
+	leer TipoMascota;
+	escribir "por favor escriba el nombre completo del dueño";	
+	Leer NombreCompleto;
+	Escribir NombreMascota," es un(a) ",TipoMascota," el cual, tiene ",EdadMascota," años de edad y ",NombreCompleto," es actualmente su dueño(a).";
+FinProceso

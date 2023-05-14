@@ -1,0 +1,9 @@
+Proceso Punto1
+	
+	definir Nombre Como Caracter;
+	definir Apellido Como Caracter;
+	escribir "Hola, por favor escriba su nombre:";
+	leer Nombre;
+	escribir "por favor escriba su apellido:";
+	leer Apellido;
+FinProceso
