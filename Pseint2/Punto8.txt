@@ -1,0 +1,120 @@
+Proceso Punto8
+	Definir f,c Como Entero;
+	Definir Matriz Como Caracter;
+	Definir Matriz2 Como entero;
+	Definir Decoracion Como Caracter;
+	Definir Opcion Como Entero;
+	Definir Opcion2 Como Entero;
+	Definir Opcion3 Como Entero;
+	Definir Consecutivo Como Entero;
+	Definir Ventas Como Caracter;
+	Definir Ventas2 Como Entero;
+	Dimension Matriz[2,3];
+	Dimension Matriz2[3,3];
+	Dimension Ventas[2,3];
+	Dimension Ventas2[3,3];
+	
+	
+	//F,C
+	
+	Consecutivo<-1;
+	Ventas2[0,0]<-0;
+	Ventas2[1,0]<-0;
+	Opcion2<-2;
+	Matriz[0,0]<-"Pastel gran boda";
+	Matriz[0,1]<-"Fresa";
+	Matriz[0,2]<-"8";
+	Matriz2[0,0]<-2;
+	Matriz[1,0]<-"Pastel Cumpleaños";
+	Matriz[1,1]<-"Maracuya";
+	Matriz[1,2]<-"16";
+	Matriz2[1,0]<-3;
+	
+	
+	Escribir " ";
+	Escribir "1- Agregar un pastel al inventario";
+	Escribir "2- Inventario actual";
+	Escribir "3- Registrar pedido";
+	leer Opcion;
+	Segun Opcion Hacer
+		1:
+			Escribir "Nombre del pastel";
+			leer Matriz[Opcion2,0];
+			Escribir "Sabor del pastel";
+			leer Matriz[Opcion2,1];
+			Escribir "Cantidad de piezas";
+			leer Matriz[Opcion2,2];
+			Escribir "Disponibles";
+			leer Matriz2[Opcion2,0];
+			Opcion2<-Opcion2+1;
+		2:
+			Escribir "-----------------------------------------------------";
+			Escribir "Disponibles - Nombre de pastel - Sabor - Porciones";
+			Escribir "-----------------------------------------------------";
+			Para f<-0 Hasta 1 Con Paso 1 Hacer
+				Escribir "";
+				Escribir Sin Saltar Matriz2[f,0];
+				Para c<-0 Hasta 2 Con Paso 1 Hacer
+					Escribir Sin Saltar" - ",Matriz[f,c];
+				FinPara
+			FinPara
+			Escribir "";
+			Escribir"____________________________________________________";
+			
+			
+		3:
+			Escribir "Registrar pedido";
+			Escribir "Por favor Seleccione que pastel desea del inventario actual";
+			Escribir "--------------------------------------------------------------";
+			Escribir "Seleccion - Disponibles - Nombre de pastel - Sabor - Porciones";
+			Escribir "--------------------------------------------------------------";
+			Para f<-0 Hasta 1 Con Paso 1 Hacer
+				Escribir "";
+				Escribir Sin Saltar"Opcion ",Consecutivo," - ";
+				Escribir Sin Saltar Matriz2[f,0];
+				Consecutivo<-Consecutivo+1;
+				Para c<-0 Hasta 2 Con Paso 1 Hacer
+					Escribir Sin Saltar" - ",Matriz[f,c];
+				FinPara
+			FinPara
+			Escribir "";
+			Escribir"____________________________________________________";
+			Escribir "Por favor escribir el numero de opcion que desea encargar";
+			Leer Opcion3;
+			Segun Opcion3 Hacer
+				1:
+					Matriz2[0,0]<--1;
+					Ventas2[0,0]<-Ventas2[0,0]+1;
+					Ventas[0,0]<-Matriz[0,0];
+					Ventas[0,1]<-Matriz[0,1];
+					Ventas[0,2]<-Matriz[0,2];
+					Escribir "Su pedido ah sido recibido";
+					Escribir "  Cantidad encargada:",Ventas2[0,0];
+					Escribir " -Nombre del pastel: ",Ventas[0,0];
+					Escribir " -Sabor: ",Ventas[0,1];
+					Escribir " -Porciones: ",Ventas[0,2];
+					
+				2:
+					Matriz2[1,0]<--1;
+					Ventas2[1,0]<-Ventas2[1,0]+1;
+					Ventas[1,0]<-Matriz[1,0];
+					Ventas[1,1]<-Matriz[1,1];
+					Ventas[1,2]<-Matriz[1,2];
+					Escribir "Su pedido ah sido recibido";
+					Escribir "  Cantidad encargada:",Ventas2[1,0];
+					Escribir " -Nombre del pastel: ",Ventas[1,0];
+					Escribir " -Sabor: ",Ventas[1,1];
+					Escribir " -Porciones: ",Ventas[1,2];
+					
+					
+				De Otro Modo:
+					Escribir "No corresponde a las opciones disponibles";
+					
+			FinSegun
+			
+		De Otro Modo:
+			Escribir "No corresponde a las opciones disponibles";
+			
+	FinSegun
+	
+FinProceso

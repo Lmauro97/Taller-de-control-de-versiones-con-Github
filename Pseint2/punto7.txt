@@ -1,0 +1,37 @@
+Proceso punto7
+	Definir IMC Como Real;
+	Definir Peso Como Real;
+	Definir Estatura Como Real;
+	Definir RangoDePeso Como Caracter;
+	RangoDePeso<-"No valido";
+	
+	
+	Escribir "Por favor escribir peso en Kilogramos";
+	Leer Peso;
+	Escribir "Por favos escriba su estatura en metros";
+	Leer Estatura;
+	Estatura<-Estatura*Estatura;
+	IMC<-Peso/Estatura;
+	si IMC>10.0 y IMC<=18.5 Entonces
+		RangoDePeso<-"bajo peso";
+	SiNo
+		Si IMC>18.5 y IMC<=25.0 Entonces
+			RangoDePeso<-"Normal";
+		SiNo
+			Si IMC>25.0 y IMC<=30.0 Entonces
+				RangoDePeso<-"Sobrepeso o Preobesidad";
+			SiNo
+				Si IMC>30.0 Entonces
+					RangoDePeso<-"Obeso";
+				SiNo
+					Escribir "Rango de peso o estatura no valido";
+				FinSi
+				
+			FinSi
+		FinSi
+		
+	FinSi
+	Escribir "Su IMC es igual a ",IMC," y su rango de peso es ",RangoDePeso;
+	
+	
+FinProceso

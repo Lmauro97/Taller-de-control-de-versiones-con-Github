@@ -1,0 +1,46 @@
+Proceso Punto10
+	Dimension Usuario[5,4];
+	//titular
+	Dimension Saldo[5,1];
+	//cantidad
+	Definir Operacion Como Entero;
+	Definir valor1 Como Entero;
+	Definir Usuario Como Caracter;
+	Definir Saldo Como Real;
+
+	Usuario[0,0]<-"Julian rivera";Usuario[0,1]<-"11111";Usuario[0,2]<-"Empleado";Usuario[0,3]<-"3111111";
+	Saldo[0,0]<-10000.0;
+	//realizar ingresos, retiros o consultas de valor
+	Escribir "Por favor elegir que operación desea realizar";
+	Escribir "1- Realizar ingreso";
+	Escribir "2- Realizar retiro";
+	Escribir "3- Realizar consulta de valor";
+	Leer Operacion;
+	Segun Operacion Hacer
+		1:
+			Escribir "Por favor digite el dinero que desea ingresar";
+			leer valor1;
+			
+			Si valor1>0 Entonces
+				Saldo[0,0]<-Saldo[0,0]+valor1;
+				Escribir "Su nuevo saldo es de: ",Saldo[0,0];
+			SiNo
+				Escribir "No puede ingresar un saldo negativo";
+			FinSi
+		2:
+			Escribir "Por favor digite el dinero que desea retirar";
+			leer valor1;
+			Si Saldo[0,0]>=valor1 Entonces
+				Saldo[0,0]<-Saldo[0,0]-valor1;
+				Escribir "Retiro efectivo de: ",valor1;
+				Escribir "Su nuevo saldo es de: ",saldo[0,0];
+			SiNo
+				Escribir "Su saldo no permite un retiro mayor de dinero";
+			FinSi
+		3:
+			Escribir "Saldo: ";
+			Escribir Saldo[0,0];
+		De Otro Modo:
+			Escribir "No corresponde a las opciones";
+		FinSegun
+FinProceso

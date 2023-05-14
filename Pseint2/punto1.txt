@@ -1,0 +1,9 @@
+Proceso punto1
+	definir edad Como Entero;
+	escribir "Buenos dias, cual es su edad?";
+	Leer edad;
+	si edad >= 18 Entonces
+		Escribir "Usted es mayor de edad";
+	FinSi
+	
+FinProceso
