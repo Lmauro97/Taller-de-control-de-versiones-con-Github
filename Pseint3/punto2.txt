@@ -1,0 +1,20 @@
+Proceso punto2  
+	definir a Como texto;
+	definir b Como entero;
+	definir space como texto;
+	definir conta Como Entero;
+	a<-"*";
+	space<-" ";
+	conta<-10;
+	Mientras conta>0 Hacer
+		para b<-1 hasta conta Con Paso 1 Hacer
+			escribir Sin Saltar space;
+		FinPara
+		Escribir Sin Saltar a;
+		Escribir "";
+		a<-Concatenar(a,"*");
+		conta<-conta-1;
+	FinMientras
+	
+	
+FinProceso

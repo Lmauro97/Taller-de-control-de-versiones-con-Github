@@ -1,0 +1,10 @@
+Proceso punto1
+	definir a Como Entero;
+	definir b como texto;
+	b<-"*";
+	para a<-1 hasta 10 Con Paso 1 Hacer
+		escribir b;
+		b<-Concatenar(b,"*");
+	FinPara
+	
+FinProceso
