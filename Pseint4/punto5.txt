@@ -1,0 +1,45 @@
+Proceso punto5
+	Definir valorx, valory,i,xy Como Entero;
+	Dimension xy[10,10];
+	Para valory<-0 Hasta 9 Hacer
+		Para valorx<-0 Hasta 9 Hacer
+			xy[valory,valorx]<-(valory+1)*(valorx+1);
+		FinPara
+	FinPara
+	Escribir "                            Columnas ";
+	Escribir Sin Saltar"     ";
+	Para valorx<-0 Hasta 9 Hacer
+		Escribir Sin Saltar"  ",valorx,"  ";
+	FinPara
+	Escribir "";
+	Para valory<-1 Hasta 10 Hacer
+		Para valorx<-1 Hasta 10 Hacer
+			Si valorx=1 Entonces
+				Segun valory Hacer
+					3:Escribir Sin Saltar"F ";
+					4:Escribir Sin Saltar"i ";
+					5:Escribir Sin Saltar"l ";	
+					6:Escribir Sin Saltar"a ";	
+					7:Escribir Sin Saltar"s ";	
+				FinSegun
+				Si valory<=2 o valory>=8 Entonces
+					Escribir Sin Saltar"  ";
+				FinSi
+				Escribir Sin Saltar valory-1," ";
+			FinSi
+			Si valory=10 Entonces
+				Escribir Sin Saltar" ";
+			SiNo
+				Escribir Sin Saltar"  ";
+			FinSi
+			Escribir Sin Saltar valorx,"x",valory;
+		FinPara
+		Escribir "";
+	FinPara
+	Escribir "Posicion de operacion que se desea tener";
+	Escribir "Fila:";
+	Leer valory;
+	Escribir "Columna:";
+	Leer valorx;
+	Escribir "La multiplicacion es igual a: ",xy[valory,valorx];
+FinProceso

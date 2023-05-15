@@ -1,0 +1,17 @@
+Proceso punto1
+	Definir vector Como Entero;
+	Dimension vector[5];
+	Definir i Como Entero;
+	Definir numero Como Entero;
+	
+	para i<-0 Hasta 4 Hacer
+		Escribir "Por favor ingrese numero para la posición: ",i;
+		Leer numero;
+		vector[i]<-numero;
+	FinPara
+	Limpiar Pantalla;
+	Para i<-0 Hasta 4 Hacer
+		Escribir "[",i,"]"," = ",vector[i];
+	FinPara
+	
+FinProceso
