@@ -1,0 +1,604 @@
+SubProceso validacion1(edad)
+	si edad >= 18 Entonces
+		Escribir "Usted es mayor de edad";
+		//punto 1
+	SiNo
+		Si edad <18 Entonces
+			Escribir "Usted aún es un niño(a).";
+			//punto 2
+		FinSi
+	FinSi
+FinSubProceso
+
+SubProceso validacion2(Edad,Nombre,Apellido)
+	si Edad >= 18 Entonces
+		Escribir Nombre," ",Apellido," usted es mayor de edad, por lo tanto puede entrar a la fiesta.";
+	SiNo
+		Escribir Nombre," ",Apellido," usted es menor de edad, por lo tanto, no puede entrar a la fiesta, por favor devuélvase a su casa.";
+	FinSi
+FinSubProceso
+
+SubProceso validacion3(Opcion2,Fecha,Solicitante,Anotaciones,Opcion1,Pelicula_1,Pelicula_2,Pelicula_3)
+	Segun Opcion2 Hacer
+		1:
+			Escribir "Alquilar pelicula";
+			Escribir "Escribe la Fecha de entrega DD/MM/AAAA";
+			leer Fecha;
+			Escribir "Solicitante";
+			leer Solicitante;
+			Escribir "Seleccione la pelicula disponible";
+			Escribir "1-" , Pelicula_1, " 2-" ,Pelicula_2, " 3-" ,Pelicula_3;
+			Leer Opcion1;
+			Segun Opcion1 Hacer
+				1:
+					Pelicula_1 <- "";
+				2:
+					Pelicula_2 <- "";
+				3:
+					Pelicula_3 <- "";
+				De Otro Modo:
+					Escribir "no corresponde en el inventario";
+			FinSegun
+		2:
+			Escribir "Consulta de peliculas disponibles";
+			Escribir Pelicula_1;
+			Escribir Pelicula_2;
+			Escribir Pelicula_3;
+		3:
+			Escribir "recibir película";
+			Escribir "Ultima fecha de alquiler ",Fecha, ", escriba la fecha de entrega DD/MM/AAAA";
+			leer Fecha;
+			Escribir "Novedad de la entrega?";
+			Leer Anotaciones;
+			Escribir "Codigo de la pelicula: "," 1-","humanos a marte"," 2-","Matrix"," 3-","Terminator";
+			Leer Opcion1;
+			Segun Opcion1 Hacer
+				1:
+					Pelicula_1 <- "humanos a marte";
+				2:
+					Pelicula_2 <- "Matrix";
+				3:
+					Pelicula_3 <- "Terminator";
+			FinSegun
+			De Otro Modo:
+		FinSegun
+FinSubProceso
+
+SubProceso Validacion4 ()
+definir Opcion Como entero;
+Definir Fecha Como Caracter;
+Definir Opcion1 Como Entero;
+Definir producto1 Como Caracter;
+Definir producto2 Como Caracter;
+Definir producto3 Como Caracter;
+Definir Valor1 Como Real;
+Definir Valor2 Como Real;
+Definir Valor3 Como Real;
+Definir Comprador Como Caracter;
+definir consecutivo Como Entero;
+definir eleccion Como Caracter;
+Definir ventastotales Como Real;
+
+producto1<-"Advil max";
+producto2<-"Acetaminofen";
+producto3<-"Ibuprofeno";
+ventastotales<-0.0;
+consecutivo<-0;
+valor1<-2000.0;
+valor2<-1850.0;
+valor3<-1000.0;
+
+Escribir " ___________________________";
+Escribir "|     Droguería Mi Salud    |";
+Escribir " ---------------------------";
+Escribir "Buenos dias, seleccione que desea hacer";
+
+Escribir "1- Compra de producto";
+Escribir "2- Consulta de precios por producto";
+Escribir "3- Devoluciones";
+Leer Opcion;
+
+Segun Opcion Hacer
+	1:
+		Escribir "Compra de producto";
+		Escribir "Fecha DD/MM/AAAA";
+		leer Fecha;
+		Escribir "Comprador";
+		leer Comprador;
+		Escribir "Numero de producto";
+		Escribir " 1- " ,producto1;
+		escribir " 2- " ,producto2;
+		escribir " 3-" ,producto3;
+		Leer Opcion1;
+		Segun Opcion1 Hacer
+			1:
+				Escribir "el valor del producto es igual a ",Valor1;
+				eleccion<-producto1;
+				ventastotales<-ventastotales+Valor1;
+			2:
+				Escribir "el valor del producto es igual a ",Valor2;
+				eleccion<-producto2;
+				ventastotales<-ventastotales+Valor2;
+			3:
+				Escribir "el valor del producto es igual a ",Valor3;
+				eleccion<-producto3;
+				ventastotales<-ventastotales+Valor3;
+				
+			De Otro Modo:
+				Escribir "no corresponde en el inventario";
+		FinSegun
+		
+		escribir "Numero de factura ",consecutivo+1;
+		escribir fecha;
+		Escribir "--------------------------------------------";
+		Escribir "codigo de producto: ",Opcion1;
+		Escribir "Producto";
+		Escribir eleccion;
+		si eleccion=producto1 Entonces
+			Escribir Valor1;
+		sino
+			si eleccion=producto2 Entonces
+				Escribir Valor2;	
+			SiNo
+				si eleccion=producto3 Entonces
+					escribir Valor3;
+				FinSi
+			FinSi
+		FinSi
+		
+		
+	2:
+		Escribir "Consulta de precios por producto";
+		Escribir producto1,"         ", Valor1;
+		Escribir producto2,"      ", Valor2;
+		Escribir producto3,"        ", Valor3;
+	3:
+		Escribir "Devolución";
+		Escribir "producto a devolver";
+		Escribir " 1- " ,producto1;
+		escribir " 2- " ,producto2;
+		escribir " 3-" ,producto3;
+		leer Opcion;
+		Segun Opcion Hacer
+			1:
+				Escribir "a seleccionado ",producto1," se hace la devolucion de ",Valor1," pesos";
+				ventastotales<-ventastotales-Valor1;
+			2:
+				Escribir "a seleccionado ",producto2," se hace la devolucion de ",Valor2," pesos";
+				ventastotales<-ventastotales-Valor2;
+			3:
+				Escribir "a seleccionado ",producto3," se hace la devolucion de ",Valor3," pesos";
+				ventastotales<-ventastotales-Valor3;
+				
+			De Otro Modo:
+				Escribir "opcion no valida";
+		FinSegun
+		
+FinSegun
+FinSubProceso
+
+SubProceso Validacion5()
+	
+	definir Opcion Como entero;
+	definir FechaIng Como Caracter;
+	definir Dueno Como Caracter;
+	Definir Documento Como Caracter;
+	Definir Marca Como Caracter;
+	Definir Placa Como Caracter;
+	Definir Numtel Como Caracter;
+	Definir NumIng Como entero;
+	Definir Observaciones Como Caracter;
+	Definir Opcion2 Como Caracter;
+	Definir FechaSal Como Caracter;
+	Definir Novedades Como Caracter;
+	Definir Concepto Como Caracter;
+	Definir Cobro como Entero;
+	Definir Temporal Como Caracter;
+	Definir Temnum como Entero;
+	
+	FechaIng<-"20/03/2022";
+	Dueno<-"lorenzo perez";
+	Documento<-"1011111222";
+	Marca<-"Pulzar";
+	Placa<-"rtx123";
+	Numtel<-"3111111111";
+	Observaciones<-"no prende";
+	NumIng<-1;
+	
+	Escribir " ___________________________";
+	Escribir "|        El Maquinista      |";
+	Escribir " ---------------------------";
+	Escribir "Buenos dias, seleccione que desea hacer";
+	Escribir "1- Registro de ingreso";
+	Escribir "2- Registro de salida";
+	Escribir "3- Cambios al vehiculo";
+	Leer Opcion;
+	
+	Segun Opcion Hacer
+		1:
+			Escribir "Registro de ingreso";
+			Escribir "Fecha DD/MM/AAAA";
+			leer FechaIng;
+			Escribir "Nombre del dueño";
+			leer Dueno;
+			Escribir "Numero de documento";
+			leer Documento;
+			escribir "Marca";
+			Leer Marca;
+			Escribir "Placa";
+			leer Placa;
+			Escribir "Número telefonico";
+			leer Numtel;
+			Escribir "Observaciones por parte del cliente";
+			Leer Observaciones;
+			FechaSal<-"En poseción del taller";
+			
+			Escribir "-------------------------------------------";
+			escribir NumIng+1;
+			escribir FechaIng;
+			Escribir "--------------------------------------------";
+			Escribir "Marca: ",Marca;
+			Escribir "Placa: ", Placa;
+			Escribir "Nombre del dueño: ", Dueno;
+			Escribir "Numero de documento: ", Documento;
+			Escribir "Numero de contacto: ", Numtel;
+			Escribir "Observaciones por parte del cliente: ", Observaciones;
+			Escribir "Fecha de salida: ",FechaSal;
+			Escribir "--------------------------------------------";
+			Escribir "Los datos estan correctamente diligenciados? S/N";
+			leer Opcion2;
+			si Opcion2="S" o Opcion2="s"  Entonces
+				Escribir "        Datos fueron cargados exitosamente       ";
+			sino
+				si Opcion2="N" o Opcion2="n" Entonces
+					FechaIng<-"";
+					Dueno<-"";
+					Documento<-"";
+					Marca<-"";
+					Placa<-"";
+					Numtel<-"";
+					NumIng<-NumIng-1;
+				SiNo
+					Escribir " Caracter no valido ";
+				FinSi
+			FinSi
+		2:
+			Escribir "Registro de salida";
+			Escribir "Fecha de salida del vehiculo: ";
+			Leer FechaSal;
+			Escribir "Novedades de salida ";
+			Leer Novedades;
+			
+		3:
+			Escribir "Cambios";
+			Escribir "Placa a la cual se le generara cobro";
+			Leer Placa;
+			Escribir "Por favor escriba los conceptos de los cobros a realizar por el vehiculo";
+			Escribir "ejemplo: Cambio de motor";
+			Leer Concepto;
+			Escribir "Cobro por el concepto ",Concepto;
+			Leer Cobro;
+			Escribir "hay otro cobro a realizar al cliente S/N?";
+			Leer Opcion2;
+			Si Opcion2="s" o Opcion2="S" Entonces
+				Temnum<-Cobro;
+				Temporal<-Concepto;
+				Escribir "Por favor escriba los conceptos de los cobros a realizar por el vehiculo";
+				Escribir "ejemplo: Cambio de motor";
+				leer Concepto;
+				Escribir "Cobro por el concepto ",Concepto;
+				Leer Cobro;
+				Temporal<-concatenar(Temporal," - ");
+				Concepto<-concatenar(Temporal,Concepto);
+				Cobro<-Cobro+temnum;
+				Escribir "Conceptos y cobros hasta la fecha";
+				Escribir Concepto,"------------------",Cobro;
+			SiNo
+				Escribir "Conceptos y cobros hasta la fecha";
+				Escribir Concepto,"------------------",Cobro;
+			FinSi
+			
+	FinSegun
+FinSubProceso
+
+SubProceso Validacion6()
+	Definir IMC Como Real;
+	Definir Peso Como Real;
+	Definir Estatura Como Real;
+	Definir RangoDePeso Como Caracter;
+	RangoDePeso<-"No valido";
+	
+	
+	Escribir "Por favor escribir peso en Kilogramos";
+	Leer Peso;
+	Escribir "Por favos escriba su estatura en metros";
+	Leer Estatura;
+	Estatura<-Estatura*Estatura;
+	IMC<-Peso/Estatura;
+	si IMC>10.0 y IMC<=18.5 Entonces
+		RangoDePeso<-"bajo peso";
+	SiNo
+		Si IMC>18.5 y IMC<=25.0 Entonces
+			RangoDePeso<-"Normal";
+		SiNo
+			Si IMC>25.0 y IMC<=30.0 Entonces
+				RangoDePeso<-"Sobrepeso o Preobesidad";
+			SiNo
+				Si IMC>30.0 Entonces
+					RangoDePeso<-"Obeso";
+				SiNo
+					Escribir "Rango de peso o estatura no valido";
+				FinSi
+			FinSi
+		FinSi
+	FinSi
+	Escribir "Su IMC es igual a ",IMC," y su rango de peso es ",RangoDePeso;
+FinSubProceso
+
+SubProceso Validacion7()
+	Definir f,c Como Entero;
+	Definir Matriz Como Caracter;
+	Definir Matriz2 Como entero;
+	Definir Decoracion Como Caracter;
+	Definir Opcion Como Entero;
+	Definir Opcion2 Como Entero;
+	Definir Opcion3 Como Entero;
+	Definir Consecutivo Como Entero;
+	Definir Ventas Como Caracter;
+	Definir Ventas2 Como Entero;
+	Dimension Matriz[2,3];
+	Dimension Matriz2[3,3];
+	Dimension Ventas[2,3];
+	Dimension Ventas2[3,3];
+	Consecutivo<-1;
+	Ventas2[0,0]<-0;
+	Ventas2[1,0]<-0;
+	Opcion2<-2;
+	Matriz[0,0]<-"Pastel gran boda";
+	Matriz[0,1]<-"Fresa";
+	Matriz[0,2]<-"8";
+	Matriz2[0,0]<-2;
+	Matriz[1,0]<-"Pastel Cumpleaños";
+	Matriz[1,1]<-"Maracuya";
+	Matriz[1,2]<-"16";
+	Matriz2[1,0]<-3;
+	Escribir " ";
+	Escribir "1- Agregar un pastel al inventario";
+	Escribir "2- Inventario actual";
+	Escribir "3- Registrar pedido";
+	leer Opcion;
+	Segun Opcion Hacer
+		1:
+			Escribir "Nombre del pastel";
+			leer Matriz[Opcion2,0];
+			Escribir "Sabor del pastel";
+			leer Matriz[Opcion2,1];
+			Escribir "Cantidad de piezas";
+			leer Matriz[Opcion2,2];
+			Escribir "Disponibles";
+			leer Matriz2[Opcion2,0];
+			Opcion2<-Opcion2+1;
+		2:
+			Escribir "-----------------------------------------------------";
+			Escribir "Disponibles - Nombre de pastel - Sabor - Porciones";
+			Escribir "-----------------------------------------------------";
+			Para f<-0 Hasta 1 Con Paso 1 Hacer
+				Escribir "";
+				Escribir Sin Saltar Matriz2[f,0];
+				Para c<-0 Hasta 2 Con Paso 1 Hacer
+					Escribir Sin Saltar" - ",Matriz[f,c];
+				FinPara
+			FinPara
+			Escribir "";
+			Escribir"____________________________________________________";
+			
+			
+		3:
+			Escribir "Registrar pedido";
+			Escribir "Por favor Seleccione que pastel desea del inventario actual";
+			Escribir "--------------------------------------------------------------";
+			Escribir "Seleccion - Disponibles - Nombre de pastel - Sabor - Porciones";
+			Escribir "--------------------------------------------------------------";
+			Para f<-0 Hasta 1 Con Paso 1 Hacer
+				Escribir "";
+				Escribir Sin Saltar"Opcion ",Consecutivo," - ";
+				Escribir Sin Saltar Matriz2[f,0];
+				Consecutivo<-Consecutivo+1;
+				Para c<-0 Hasta 2 Con Paso 1 Hacer
+					Escribir Sin Saltar" - ",Matriz[f,c];
+				FinPara
+			FinPara
+			Escribir "";
+			Escribir"____________________________________________________";
+			Escribir "Por favor escribir el numero de opcion que desea encargar";
+			Leer Opcion3;
+			Segun Opcion3 Hacer
+				1:
+					Matriz2[0,0]<--1;
+					Ventas2[0,0]<-Ventas2[0,0]+1;
+					Ventas[0,0]<-Matriz[0,0];
+					Ventas[0,1]<-Matriz[0,1];
+					Ventas[0,2]<-Matriz[0,2];
+					Escribir "Su pedido ah sido recibido";
+					Escribir "  Cantidad encargada:",Ventas2[0,0];
+					Escribir " -Nombre del pastel: ",Ventas[0,0];
+					Escribir " -Sabor: ",Ventas[0,1];
+					Escribir " -Porciones: ",Ventas[0,2];
+				2:
+					Matriz2[1,0]<--1;
+					Ventas2[1,0]<-Ventas2[1,0]+1;
+					Ventas[1,0]<-Matriz[1,0];
+					Ventas[1,1]<-Matriz[1,1];
+					Ventas[1,2]<-Matriz[1,2];
+					Escribir "Su pedido ah sido recibido";
+					Escribir "  Cantidad encargada:",Ventas2[1,0];
+					Escribir " -Nombre del pastel: ",Ventas[1,0];
+					Escribir " -Sabor: ",Ventas[1,1];
+					Escribir " -Porciones: ",Ventas[1,2];
+				De Otro Modo:
+					Escribir "No corresponde a las opciones disponibles";
+			FinSegun
+		De Otro Modo:
+			Escribir "No corresponde a las opciones disponibles";
+	FinSegun
+FinSubProceso
+
+SubProceso Validacion8()
+	Definir Valor1 Como Real;
+	Definir Valor2 Como Real;
+	Definir Valor3 Como Real;
+	Definir Resultado Como Real;
+	Definir Medida Como Caracter;
+	Definir Figura Como Entero;
+	//Como se calcula el area de una figura
+	//si desea calcular el área de un rectángulo, triángulo o trapecio
+	Escribir "Por favor seleccione que Area desea calcular";
+	Escribir "1 - Rectángulo";
+	Escribir "2 - Triángulo";
+	Escribir "3 - Trapecio";
+	Leer Figura;
+	Segun Figura Hacer
+		
+		1:
+			//Rectangulo
+			Escribir "Por favor escribir la base";
+			Leer Valor1;
+			Escribir "Por favor escribir la altura";
+			Leer Valor2;
+			Escribir "Por favor escriba el tipo de medida ejm:M o Cm";
+			Leer Medida;
+			Escribir "El área es igual a ",Valor1*Valor2," ",Medida,"2";	
+			Escribir "Se multiplica la base por la altura y se obtiene el área de esta forma";
+		2:
+			//Triangulo
+			Escribir "Por favor escribir la base";
+			Leer Valor1;
+			Escribir "Por favor escribir la altura";
+			Leer Valor2;
+			Escribir "Por favor escriba el tipo de medida ejm:M o Cm";
+			Leer Medida;
+			Escribir "El área es igual a ",Valor1*Valor2/2," ",Medida,"2";
+			Escribir "Se multiplica la base por la altura, luego se divide en 2 y se obtiene el área de esta forma";
+		3:
+			//Trapecio
+			Escribir "Por favor escribir la base mayor";
+			Leer Valor1;
+			Escribir "Por favor escribir la base menor";
+			Leer Valor2;
+			Escribir "Por favor escribir la altura";
+			Leer Valor3;
+			Escribir "Por favor escriba el tipo de medida ejm:M o Cm";
+			Leer Medida;
+			Escribir "El área es igual a ",((Valor1+Valor2)*Valor3)/2," ",Medida,"2";
+			Escribir "Se suma la base mayor y la base menor luego se multiplica por la altura y se divide en 2 el resultado sera el área";
+		De Otro Modo:
+			Escribir "Opcion no valida";
+	FinSegun
+FinSubProceso
+
+SubProceso Validacion9()
+	Dimension Usuario[5,4];
+	//titular
+	Dimension Saldo[5,1];
+	//cantidad
+	Definir Operacion Como Entero;
+	Definir valor1 Como Entero;
+	Definir Usuario Como Caracter;
+	Definir Saldo Como Real;
+	
+	Usuario[0,0]<-"Julian rivera";Usuario[0,1]<-"11111";Usuario[0,2]<-"Empleado";Usuario[0,3]<-"3111111";
+	Saldo[0,0]<-10000.0;
+	//realizar ingresos, retiros o consultas de valor
+	Escribir "Por favor elegir que operación desea realizar";
+	Escribir "1- Realizar ingreso";
+	Escribir "2- Realizar retiro";
+	Escribir "3- Realizar consulta de valor";
+	Leer Operacion;
+	Segun Operacion Hacer
+		1:
+			Escribir "Por favor digite el dinero que desea ingresar";
+			leer valor1;
+			Si valor1>0 Entonces
+				Saldo[0,0]<-Saldo[0,0]+valor1;
+				Escribir "Su nuevo saldo es de: ",Saldo[0,0];
+			SiNo
+				Escribir "No puede ingresar un saldo negativo";
+			FinSi
+		2:
+			Escribir "Por favor digite el dinero que desea retirar";
+			leer valor1;
+			Si Saldo[0,0]>=valor1 Entonces
+				Saldo[0,0]<-Saldo[0,0]-valor1;
+				Escribir "Retiro efectivo de: ",valor1;
+				Escribir "Su nuevo saldo es de: ",saldo[0,0];
+			SiNo
+				Escribir "Su saldo no permite un retiro mayor de dinero";
+			FinSi
+		3:
+			Escribir "Saldo: ";
+			Escribir Saldo[0,0];
+		De Otro Modo:
+			Escribir "No corresponde a las opciones";
+	FinSegun
+FinSubProceso
+
+Proceso Condisionales
+	Definir Opcion como entero;
+	Escribir "Punto a validar: ";
+	Leer Opcion;
+	Segun Opcion Hacer
+		1,2:
+			Definir edad Como Entero;
+			escribir "Buenos dias, cual es su edad?";
+			Leer edad;
+			validacion1(edad);
+		3:
+			Definir Nombre Como Caracter;
+			Definir Apellido Como Caracter;
+			Definir Edad Como Entero;
+			Escribir "Buenos dias, por favor digite su nombre";
+			Leer Nombre;
+			Escribir "por favor digite su apellido";
+			Leer Apellido;
+			Escribir "Por favor digite su edad?";
+			Leer edad;
+			validacion2(edad,Nombre,Apellido);
+		4:
+			Definir Opcion2 Como Entero;
+			Definir Fecha Como Caracter;
+			Definir Opcion1 Como Entero;
+			Definir Pelicula_1 Como Caracter;
+			Definir Pelicula_2 Como Caracter;
+			Definir Pelicula_3 Como Caracter;
+			Definir Anotaciones Como Caracter;
+			Definir Solicitante Como Caracter;
+			//nombre completo del solicitante o responsable del alquiler
+			Fecha <- "12/02/2023";
+			Pelicula_1 <- "humanos a marte";
+			Pelicula_2 <- "Matrix";
+			Pelicula_3 <- "Terminator";
+			Solicitante <- "";
+			Anotaciones <- "" ;
+			Opcion1<-0;
+			Opcion2<-0;
+			
+			Escribir "Buenos dias, seleccione que desea hacer";
+			Escribir "1- alquilar película";
+			Escribir "2- consultar películas disponibles";
+			Escribir "3- recibir película";
+			Leer Opcion2;
+			validacion3(Opcion2,Fecha,Solicitante,Anotaciones,Opcion1,Pelicula_1,Pelicula_2,Pelicula_3);
+		5:
+			validacion4;
+		6:
+			Validacion5;
+		7:
+			Validacion6;
+		8:
+			Validacion7;
+		9:
+			Validacion8;
+		10:
+			Validacion9;
+	FinSegun
+FinProceso
